@@ -25,7 +25,7 @@ function sudoku(arr) {
     }
     
     // arr.slice() cannot go into the inner array to make a hard copy.
-    // the new inner arr is still pointing to the same original inner array.
+    // the new inner array is still pointing to the same original inner array.
     // if using .fill([]), all []'s are pointing to the same [].
     // that's why we need to map into the inner array, and make new arrays for each.
     let columnArr = [...Array(9)].map(e => Array(9));
