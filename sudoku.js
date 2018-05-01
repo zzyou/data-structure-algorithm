@@ -1,26 +1,28 @@
 function check(arr) {
     if (arr.length !== 9) {
       return false;
-    } 
+    }
+
     if ((new Set(arr)).size !== 9) {
       return false;
     }
+
     for (let num of arr) {
       if (!/[1-9]/.test(num)) {
         return false;
       }
     }
+    
     return true;
   }
   
   
-  function sudoku(arr) {
+function sudoku(arr) {
     for (let row of arr) {
       if (!check(row)) {
         return false;
       }
     }
-    console.log(arr);
     
     let columnArr = [...Array(9)].map(e => Array(9));
     for (let i = 0; i <= 8; i++) {
@@ -28,21 +30,20 @@ function check(arr) {
         columnArr[j][i] = arr[i][j];
       }
     }
-    console.log(columnArr);
+
     for (let column of columnArr) {
       if (!check(column)) {
         return false;
       }
     }
   
-    
     let boxArr = [...Array(9)].map(e => Array(9));
     for (let k = 0; k <= 8; k++) {
       for (let m = 0; m <= 8; m++) {
         boxArr[k][m] = arr[Math.floor(m/3) + 3*(Math.floor(k/3))][(m%3) + 3*(k%3)];
       }
     }
-    console.log('boxArr:' + boxArr);
+
     for (let box of boxArr) {
       if (!check(box)) {
         return false;
