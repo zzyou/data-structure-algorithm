@@ -12,7 +12,7 @@ function check(arr) {
         return false;
       }
     }
-    
+
     return true;
   }
   
@@ -49,7 +49,6 @@ function sudoku(arr) {
         return false;
       }
     }
-  
     
     return true;
   }
