@@ -40,8 +40,8 @@ function sudoku(arr) {
     let boxArr = [...Array(9)].map(e => Array(9));
     for (let k = 0; k <= 8; k++) {
       for (let m = 0; m <= 8; m++) {
-        let rowIndex = Math.floor(m / 3) + 3 * (Math.floor(k / 3));
-        let columnIndex = (m % 3) + 3 * (k % 3);
+        let rowIndex = Math.floor(m / 3) + (3 * (Math.floor(k / 3)));
+        let columnIndex = (m % 3) + (3 * (k % 3));
         boxArr[k][m] = arr[rowIndex][columnIndex];
       }
     }
