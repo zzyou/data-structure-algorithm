@@ -70,6 +70,10 @@ function checkLLcycle2(head) {
       fast = fast.next.next;
     }
     
+    // what if 'fast.next === null' and 'fast !== null'?
+    // current fast is the tail.
+    // fast doesn't get reassigned, while 'slow = slow.next'.
+    // fast will stay there and wait for slow to move to the tail.
     if (slow === null || fast === null) {
       return false;
     }
