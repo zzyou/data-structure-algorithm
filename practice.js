@@ -17,6 +17,55 @@ function formatPhoneNum(num) {
     return phoneNum;
 }
 
+// another method using for loop to format:
+function formatPhoneNum(num) {
+    const str = num.toString().split(/[^0-9]+/).join('');
+    if (str.length < 10) {
+        return 'Error: it should be 10 digits';
+    }
+    let newStr = '';
+    if (str.length === 10) {
+        newStr = str;
+    }
+    else {
+        for (let i = str.length - 10; i <= str.length - 1; i ++) {
+            newStr += str[i];
+        }
+    }
+    let phoneNum = '(';
+    for (let j = 0; j < newStr.length; j++) {
+        if (j !== 2 && j !== 5) {
+            phoneNum += newStr[j];
+        }
+        else if (j === 2) {
+            phoneNum += (newStr[j] + ') ');
+        }
+        else if (j === 5) {
+            phoneNum += (newStr[j] + '-');
+        }
+    }
+    return phoneNum; 
+}
+
+// another method using slice:
+function formatPhoneNum(num) {
+    const str = num.toString().split(/[^0-9]+/).join('');
+    if (str.length < 10) {
+        return 'Error: it should be 10 digits';
+    }
+    let newStr = '';
+    if (str.length === 10) {
+        newStr = str;
+    }
+    else {
+        for (let i = str.length - 10; i <= str.length - 1; i ++) {
+            newStr += str[i];
+        }
+    }
+    const phoneNum = '(' + newStr.slice(0, 3) + ') ' + newStr.slice(3, 6) + '-' + newStr.slice(6, 10);
+    return phoneNum;
+}
+
 formatPhoneNum(4152665498);
 formatPhoneNum('4152665498');
 formatPhoneNum('4,152,665,498');
@@ -67,6 +116,6 @@ function ballFall(arr, index) {
 ballFall([1, 3, 4, 2, 8, 3, 0], 2);
 
 
-/* what if the arr is a nested array? */
+/* what if the arr is a nested array? 2-D graph */
 
 
