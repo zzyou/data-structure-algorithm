@@ -63,7 +63,7 @@ function islandCount(arr) {
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
             // check adjacent right and below, only when current element value is 1.
-            if (arr[i][j] === 1 && !arr[i][j+1]) {
+            if (arr[i][j] && !arr[i][j+1]) {
                 // cannot access property on undefined.
                 // when hitting the last row, arr[i+1][j] will encounter type error.
                 if (i === arr.length - 1) {
