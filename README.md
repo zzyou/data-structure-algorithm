@@ -3,7 +3,8 @@
 - code demo for presentations on data structures and sorting algorithm.
 - sudoku nested array application.
 - CSS transform and linear gradient.
-- isSubstring function.
-- phone number formatting function.
-- ball fall off the mountain function.
-
+- isSubstring.
+- phone number formatting.
+- ball fall off the mountain.
+- the missing smallest positive integer.
+- island count.
